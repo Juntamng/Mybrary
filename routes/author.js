@@ -3,7 +3,7 @@ const router = express.Router()
 const Author = require('../models/author')
 
 router.get('/', async (req, res) => {
-    try {
+    //try {
         let searchOptions = {}
         const searchTxt = req.query.name
         if (searchTxt != null && searchTxt != ''){
@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
             authors: authors,
             searchOptions: req.query
         })
-    }
-    catch {
-        res.redirect('/')
-    }
+    // }
+    // catch {
+    //     res.redirect('/')
+    // }
 })
 
 router.get('/new', (req,res) => {
